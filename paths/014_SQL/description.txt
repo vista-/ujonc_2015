@@ -1,0 +1,1 @@
+Our new fruit webshop uses SQL technology to make sure the web application is scalable, secure and easy to use. Your job is to find security holes in our system, but I doubt anybody would be able to find such holes. Good luck!

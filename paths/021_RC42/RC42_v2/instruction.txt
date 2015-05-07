@@ -1,0 +1,1 @@
+Get the key that is used for encryption in the web application.

@@ -1,0 +1,1 @@
+Find the string that must be provided for the executable on the standard input to print ':)'.

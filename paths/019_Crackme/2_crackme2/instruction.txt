@@ -1,0 +1,1 @@
+Find the argument that must be provided for the executable to exit with code 0.

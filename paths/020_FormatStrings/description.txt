@@ -1,0 +1,1 @@
+Printf and other format string functions are extremely useful when it comes to programming in C. They are also very useful when it comes to exploiting native applications written in C.

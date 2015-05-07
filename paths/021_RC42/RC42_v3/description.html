@@ -1,0 +1,18 @@
+<p>We've completely rewritten the application to be more flexible, and more secure! This time, the key is not present in the address space at all.
+To make thing even more secure, we require a license file to run the application.</p>
+
+<p>The new version is able to encrypt any byte stream, without length limitation.
+To achieve this, we've created a new, standard input/output based interface for the program and made it available through TCP.
+After some buffering, the received bytes are encrypted and sent back to the client.</p>
+
+<p>It's very simple to use! We recommend using <code>socat</code> for communicating with the server. For example, encrypting a whole file looks like this:</p>
+
+<code><pre>$ cat /tmp/file | socat TCP4:10.1.1.1:8888 STDIO | xxd
+0000000: 4558 414d 504c 450a 4558 414d 504c 450a  EXAMPLE.EXAMPLE.
+0000010: 4558 414d 504c 450a 4558 414d 504c 450a  EXAMPLE.EXAMPLE.
+0000020: 4558 414d 504c 450a 4558 414d 504c 450a  EXAMPLE.EXAMPLE.
+</pre></code>
+
+<p>The new <a href="/blob/1f30a10e-0177-4543-b2a7-c888e7accedf/arc42_v3.c">source code</a> and the <a href="/blob/1f30a10e-0177-4543-b2a7-c888e7accedf/arc42_v3">binary</a> are both downloadable.</p>
+
+<p>Hint: <span style="color: white">It might be worth looking up how PLT and GOT works in ELF binaries. :)</span></p>

@@ -1,0 +1,25 @@
+<p>There is this awesome old game called Master of Adventures 3, that you really want to play, but it requires a serial number.
+You would buy the game if you could, but the publisher has long disappeared, and there is no way to actually buy the game.</p>
+
+<p>The only way is to somehow generate a serial number based on the game binary.
+To make this easier, a friend of yours extracted the actual serial number checking code into a
+<a href="/blob/82aced6a-baa8-4380-a553-a14ca304283d/crackme1">separate binary file that can be run on Linux</a>.
+This file waits for a single command line argument, and exits with 0 code if the serial check was successful.
+If it was not, it exits with a non-zero code.</p>
+
+<p>In a bash shell, it's easy to check the exit code. For example, you could do something like this:
+<code><pre>$ ./crackme1 teszt123
+$ echo $?
+1
+</code></pre>
+
+<p>Or this:</p>
+<code><pre>$ if ./crackme1 teszt123 ; then echo ':)' ; else echo ':(' ; fi
+:(
+</code></pre>
+
+<p>To run it on a 64 bit Linux, you will need to install the 32 bit libc first. On Ubuntu, this is the libc6-i386 package.</p>
+
+<p>The binary is stripped, and that means that you won't see the original function names.
+The main function is usually easy to identify. In binaries compiled with GCC (like this one) the address of the main function
+is passed as the first argument to the ___libc_start_main function near the entry point.</p>

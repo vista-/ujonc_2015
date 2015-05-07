@@ -1,0 +1,9 @@
+<p>RC42 aka. RC4 v2 is our new crypto algorithm that tries to eliminate the known problems of the original RC4 algorithm.
+To prove its superiority, we've set up a public challenge where anyone can prove us wrong.
+We are also interested in implementation bugs, especially format string vulnerabilities.</p>
+
+<p>As part of the challenge, we've set up a web application that let's you encrypt strings up to 256 bytes with a key provided by us. You task is to find the key used.</p>
+
+<p>Our implementation is written in C and it is called by the web server with the appropriate command line argument. You may use a weakness in the algorithm or the implementation, it's up to you.</p>
+
+<p>The <a href="/blob/c003031f-a7e5-4286-a445-2833df618bcb/arc42_v1.c">source code</a> and the <a href="/blob/c003031f-a7e5-4286-a445-2833df618bcb/arc42_v1">binary</a> are both downloadable.</p>

@@ -1,0 +1,15 @@
+<p>As a consequence of your preciously found bug, we've made a thorough code review of our implementation.</p>
+
+<p>We've come to the conclusion that storing the key on the stack is not secure, and moved it into a global variable.</p>
+
+<p>We've also noticed that somehow, the key was still present on the stack.
+It looks like command line arguments are stored on the stack somewhere below the stack frame of the <code>main</code> function and the <code>argv</code> pointers reference that location...
+So the new implementation overwrites the key argument with a constant to make the reconstruction of the key impossible.</p>
+
+<p>Please note that our current server infrastructure doesn't support ASLR. You can simulate this in your local environment by turning off ASLR entirely or running the binary with <code>setarch</code> using the <code>-R</code> command line switch.</p>
+
+<p>The new <a href="/blob/85a61bc3-0caf-4b90-babc-6ea86b4e4b3e/arc42_v2.c">source code</a> and the <a href="/blob/85a61bc3-0caf-4b90-babc-6ea86b4e4b3e/arc42_v2">binary</a> are both downloadable.</p>
+
+<p>Hint: <span style="color:white">Escaping is tricky. Escape sequences must be resolved by someone: the C compiler, GDB, printf, etc. and the might remain unresolved until one of these processes the input.</span></p>
+
+<p>Hint: <span style="color:white">Try finding the appropriate offset with a fixed length pattern string and then use a string of the <i>same length</i> in the final payload.</span></p>

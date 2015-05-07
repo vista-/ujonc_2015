@@ -1,0 +1,1 @@
+Get the secret string stored in the database.

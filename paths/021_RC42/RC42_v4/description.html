@@ -1,0 +1,9 @@
+<p>So we've realised that after all, it was a stupid decision to require a license file... so we've completely removed the buggy license checking functionality.
+This way, we can ensure that the new algorithm spreads to as many places as possible without restriction.</p>
+
+<p>Please note that our server supports both ASLR and DEP to protect against attackers.</p>
+
+<p>You might need the exact version of the libc we are running, but sadly I can't share it with you. There are, however methods to figure out the information you need.
+Please have a look at <a href="https://github.com/molnarg/libc-binary-collection">this</a>, <a href="http://libcdb.com/">this</a> or <a href="https://pwntools.readthedocs.org/en/2.2/dynelf.html">this</a> tool.</p>
+
+<p>The new <a href="/blob/e01d44ec-e49b-4851-a67a-665faa630f32/arc42_v4.c">source code</a> and the <a href="/blob/e01d44ec-e49b-4851-a67a-665faa630f32/arc42_v4">binary</a> are both downloadable.</p>
